@@ -1,0 +1,11 @@
+<p>newauthor works!</p>
+<a [routerLink] = "['/home']">Home</a>
+<p>Add a new author</p>
+{{ newauthor | json}}
+{{ errors | json }}
+<p *ngIf = "errors" style="color: red"> {{errors.errors.name.message}}</p>
+<div>
+    <label>Name:</label>
+    <input type="text" name="newauthor.name" [(ngModel)] ="newauthor.name">
+    <button (click)="returnToHome()">Cancel</button> <button (click)="addNewAuthor()">Submit</button>
+</div>
